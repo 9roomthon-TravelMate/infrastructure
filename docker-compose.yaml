@@ -1,0 +1,26 @@
+name: travelmate
+
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - type: bind
+        source: ./proxy/nginx.conf
+        target: /etc/nginx/nginx.conf
+        read_only: true
+    ports:
+      - 80:80
+      - 443:443
+    container_name: nginx
+    depends_on:
+      - frontend
+      - backend
+    
+  frontend:
+    image: travelmate7/travelmate-frontend:latest
+    container_name: travelmate-frontend
+
+  backend:
+    image: travelmate7/travelmate-backend:latest
+    container_name: travelmate-backend
+    env_file: .env.backend
