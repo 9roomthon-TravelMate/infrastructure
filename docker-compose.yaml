@@ -17,6 +17,7 @@ services:
       - backend
     
   frontend:
+    image: travelmate7/travelmate-frontend:latest
     build:
       context: .
       args:
