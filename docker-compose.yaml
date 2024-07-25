@@ -19,6 +19,7 @@ services:
   frontend:
     image: travelmate7/travelmate-frontend:latest
     container_name: travelmate-frontend
+    env_file: .env.frontend
 
   backend:
     image: travelmate7/travelmate-backend:latest
