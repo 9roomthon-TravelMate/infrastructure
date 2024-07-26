@@ -18,12 +18,7 @@ services:
     
   frontend:
     image: travelmate7/travelmate-frontend:latest
-    build:
-      context: .
-      args:
-        REACT_APP_API_BASE_URL: ${REACT_APP_API_BASE_URL}
     container_name: travelmate-frontend
-    env_file: .env.frontend
 
   backend:
     image: travelmate7/travelmate-backend:latest
