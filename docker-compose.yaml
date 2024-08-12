@@ -24,3 +24,7 @@ services:
     image: travelmate7/travelmate-backend:latest
     container_name: travelmate-backend
     env_file: .env.backend
+    volumes:
+      - type: volume
+        source: user-images
+        target: /img-dir
