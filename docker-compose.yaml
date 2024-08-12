@@ -28,3 +28,6 @@ services:
       - type: volume
         source: user-images
         target: /img-dir
+
+volumes:
+  user-images:
